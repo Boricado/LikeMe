@@ -32,12 +32,12 @@ app.post("/posts", async (req, res) => {
       "INSERT INTO posts (titulo, img, descripcion, likes) VALUES ($1, $2, $3, 0) RETURNING *",
       [titulo, url, descripcion] // inserta 'url' en la columna 'img'
     );
-    res.json(result.rows[0]);
+    res.json(result.rows[0])
   } catch (error) {
-    console.error("Error en POST /posts:", error);
-    res.status(500).send("Error del post");
+    console.error("Error en POST /posts:", error)
+    res.status(500).send("Error del post")
   }
-});
+})
 
 
 
